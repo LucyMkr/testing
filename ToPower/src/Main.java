@@ -8,8 +8,12 @@ public class Main {
 
     public static int toThePower(int base, int exponent) {
         if (base > 0 && base < 10 && (exponent > 0 && exponent < 10 || exponent < 0 && exponent > -10) ) {
-            int power = (int) Math.pow(base, exponent);
-            System.out.println(power);
+            int base1 = base;
+            while (exponent > 0) {
+                base = base * base1;
+                exponent--;
+            }
+            System.out.println(base);
         }
         else if (base > 10 || exponent > 10 ) {
             System.out.println("-1");
